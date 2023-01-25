@@ -4,6 +4,9 @@ const choices = {
   scissors: "scissors",
 };
 
+let playerScore = 0;
+let computerScore = 0;
+
 // returns "rock", "paper", or "scissors"
 function getComputerChoice() {
   const choice = Math.trunc(Math.random() * 3);
@@ -61,9 +64,13 @@ function performRound(playerChoice, computerChoice) {
   }
 }
 
-function addPlayerScore() {}
+function addPlayerScore() {
+  console.log(`Player score: ${playerScore}(+1) = ${++playerScore}`);
+}
 
-function addComputerScore() {}
+function addComputerScore() {
+  console.log(`Computer score: ${computerScore}(+1) = ${++computerScore}`);
+}
 
 // performs a game of set rounds, prints results
 function performGame() {}
