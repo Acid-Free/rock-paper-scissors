@@ -7,10 +7,19 @@ const choices = {
 let playerScore = 0;
 let computerScore = 0;
 
+const roundCount = 5;
+
 // returns "rock", "paper", or "scissors"
 function getComputerChoice() {
   const choice = Math.trunc(Math.random() * 3);
-  return choices[choice];
+  switch (choice) {
+    case 0:
+      return choices.rock;
+    case 1:
+      return choices.paper;
+    case 2:
+      return choices.scissors;
+  }
 }
 
 // returns "rock", "paper", "scissors", or undefined
@@ -21,12 +30,6 @@ function getPlayerChoice(rawChoice) {
 
 // performs a round, prints results and updates scores
 function performRound(playerChoice, computerChoice) {
-  // check if player choice is invalid
-  if (playerChoice == null) {
-    console.log(`${playerChoice} is an invalid move`);
-    return;
-  }
-
   // draw if equal
   if (playerChoice === computerChoice) {
     console.log(`Both selected ${playerChoice}\nDraw.`);
@@ -65,12 +68,39 @@ function performRound(playerChoice, computerChoice) {
 }
 
 function addPlayerScore() {
-  console.log(`Player score: ${playerScore}(+1) = ${++playerScore}`);
+  console.log(
+    `Player score: ${playerScore}(+1) = ${++playerScore}\nComputer score: ${computerScore}`
+  );
 }
 
 function addComputerScore() {
-  console.log(`Computer score: ${computerScore}(+1) = ${++computerScore}`);
+  console.log(
+    `Player score: ${playerScore}\nComputer score: ${computerScore}(+1) = ${++computerScore}`
+  );
+}
+
+function resetScore() {
+  playerScore = 0;
+  computerScore = 0;
 }
 
 // performs a game of set rounds, prints results
-function performGame() {}
+function performGame() {
+  let round = 1;
+  while (round <= 5) {
+    const playerChoice = getPlayerChoice(
+      prompt(`Round ${round}\nRock, paper or scissors?`)
+    );
+
+    if (playerChoice == null) {
+      console.log(`${playerChoice} is an invalid move.`);
+      continue;
+    }
+
+    let computerChoice = getComputerChoice();
+
+    performRound(playerChoice, computerChoice);
+
+    ++round;
+  }
+}
