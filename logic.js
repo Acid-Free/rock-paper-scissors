@@ -33,6 +33,7 @@ function performRound(playerChoice, computerChoice) {
   // draw if equal
   if (playerChoice === computerChoice) {
     console.log(`Both selected ${playerChoice}\nDraw.`);
+    return;
   }
 
   // rock beats scissors
