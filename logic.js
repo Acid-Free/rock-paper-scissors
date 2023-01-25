@@ -104,4 +104,12 @@ function performGame() {
 
     ++round;
   }
+
+  printWinner();
+}
+
+function printWinner() {
+  if (playerScore === computerScore) console.log("Judgement: Draw");
+  else if (playerScore > computerScore) console.log("Judgement: Player wins.");
+  else console.log("Judgement: Computer wins.");
 }
