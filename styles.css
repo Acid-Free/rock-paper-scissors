@@ -19,6 +19,11 @@ body {
 #choice-div {
   display: flex;
   gap: 1em;
+  height: 50px;
+}
+
+#choice-div > button {
+  font-size: medium;
 }
 
 #choice-div > button {
