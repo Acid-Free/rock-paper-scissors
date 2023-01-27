@@ -70,6 +70,7 @@ function performRound(playerChoice, computerChoice) {
   // draw if equal
   if (playerChoice === computerChoice) {
     resultText.textContent = `Both selected ${playerChoice}.\nDraw.`;
+    showCurrentScore();
     return;
   }
 
@@ -103,6 +104,11 @@ function performRound(playerChoice, computerChoice) {
       addComputerScore();
     }
   }
+}
+
+function showCurrentScore() {
+  playerScoreText.textContent = `${playerScore}`;
+  computerScoreText.textContent = `${computerScore}`;
 }
 
 function addPlayerScore() {
