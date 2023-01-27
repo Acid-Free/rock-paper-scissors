@@ -1,0 +1,56 @@
+body {
+  display: flex;
+  justify-content: center;
+}
+
+#round-text {
+  text-align: center;
+  font-size: xx-large;
+}
+
+#main-div {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1em;
+}
+
+#choice-div {
+  display: flex;
+  gap: 1em;
+}
+
+#choice-div > button {
+  flex: 1;
+}
+
+#result-text {
+  text-align: center;
+}
+
+#result-div {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+#player-div,
+#computer-div {
+  border: 2px solid black;
+  flex: 1;
+  text-align: center;
+}
+
+#player-div > div,
+#computer-div > div {
+  border-top: 2px solid black;
+}
+
+.score-div {
+  display: flex;
+}
+
+.score-div > * {
+  flex: 1;
+}
